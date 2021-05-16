@@ -6,23 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/lmallado/CLionProjects/module 01/containers/Entity/Entity.hpp
+/Users/lmallado/Desktop/ft_containers/Entity/Entity.hpp
 ostream
 -
 
-/home/lmallado/CLionProjects/module 01/containers/List/List.hpp
-iostream
--
+/Users/lmallado/Desktop/ft_containers/List/List.hpp
 cstddef
 -
+iostream
+-
 
-/home/lmallado/CLionProjects/module 01/containers/main.cpp
+/Users/lmallado/Desktop/ft_containers/main.cpp
+Entity/Entity.hpp
+/Users/lmallado/Desktop/ft_containers/Entity/Entity.hpp
 List/List.hpp
-/home/lmallado/CLionProjects/module 01/containers/List/List.hpp
+/Users/lmallado/Desktop/ft_containers/List/List.hpp
 list
 -
-map
--
-Entity/Entity.hpp
-/home/lmallado/CLionProjects/module 01/containers/Entity/Entity.hpp
 
