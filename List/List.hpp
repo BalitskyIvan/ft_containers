@@ -101,7 +101,6 @@ public:
     bool operator==(const iterator &i) const { return i_node == i.i_node; }
 
     bool operator!=(const iterator &i) const { return i_node != i.i_node; }
-
   };
 
   class const_iterator
@@ -192,8 +191,8 @@ public:
   }
 
   iterator erase(iterator position) {
-    Node<value_type> *prev = *position;
-    Node<value_type> *next = (*position).next;
+    Node<value_type> prev = *position;
+    Node<value_type> next = (*position).next;
     prev->next = next;
     next->prev = prev;
     deallocate_node(*position);
@@ -246,6 +245,24 @@ public:
   void pop_back() { erase(end()->prev); }
 
   void swap(list &x) { swap_lists(this->node, x.node); }
+
+  void resize(size_type n, value_type val = value_type()) {
+    if (n > size_n) {
+      iterator it = end();
+      for (int i = size_n; i < n; i++) {
+        insert(it, val);
+        i++;
+      }
+    } else if (n < size_n) {
+      iterator it = begin();
+      int i = 0;
+      while (i < n) {
+        it++;
+        i++;
+      }
+      erase(it, end());
+    }
+  }
 
   virtual ~list(){
       //	erase(begin(), end());
