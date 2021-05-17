@@ -51,7 +51,7 @@ public:
   list(InputIterator first, InputIterator last,
        const allocator_type &alloc = allocator_type()) {
     node = create_empty_node();
-    insert(begin(), first, last);
+    insert<iterator>(begin(), first, last);
   }
 
   list(const list &x) {
@@ -150,9 +150,9 @@ public:
     const T &operator*() const { return (obj->element); }
   };
 
-  iterator begin() { return node->next; };
+  iterator begin() { return iterator(node->next); };
 
-  iterator end() { return node; };
+  iterator end() { return iterator(node); };
 
   const_iterator begin() const { return iterator(node); };
 
@@ -187,15 +187,17 @@ public:
   template <class InputIterator>
   void insert(iterator position, iterator first, iterator last) {
     for (; first != last; first++)
-      push_node(position, *first);
+      push_node(position, create_node(first.i_node->element));
   }
 
   iterator erase(iterator position) {
-    Node<value_type> prev = *position;
-    Node<value_type> next = (*position).next;
-    prev->next = next;
+    Node<value_type> *current = position.i_node;
+    Node<value_type> *next = position.i_node->next;
+    Node<value_type> *prev = position.i_node->prev;
     next->prev = prev;
-    deallocate_node(*position);
+    prev->next = next;
+    deallocate_node(current);
+    size_n--;
     return next;
   }
 
@@ -246,13 +248,14 @@ public:
 
   void swap(list &x) { swap_lists(this->node, x.node); }
 
+
+  void clear() { erase(begin(), end()); }
+
   void resize(size_type n, value_type val = value_type()) {
     if (n > size_n) {
       iterator it = end();
-      for (int i = size_n; i < n; i++) {
+      for (int i = size_n; i < n; i++)
         insert(it, val);
-        i++;
-      }
     } else if (n < size_n) {
       iterator it = begin();
       int i = 0;
@@ -264,9 +267,39 @@ public:
     }
   }
 
-  virtual ~list(){
-      //	erase(begin(), end());
-  };
+  void splice(iterator position, list &x) {
+    insert<iterator>(position, x.begin(), x.end());
+    x.clear();
+  }
+
+  void splice(iterator position, list &x, iterator i) {
+    push_node(position, create_node(i.i_node->element));
+    x.erase(i);
+  }
+
+  void splice(iterator position, list &x, iterator first, iterator last) {
+    insert<iterator>(position, first, last);
+    x.erase(first, last);
+  }
+
+  void remove(const value_type& val) {
+    iterator first = begin();
+    iterator last = end();
+
+    while (first != last) {
+      if (first.i_node->element == val) {
+        erase(first);
+        break;
+      }
+      first++;
+    }
+  }
+
+  void reverse() {
+    
+  }
+
+  virtual ~list() { clear(); };
 
 private:
   Node<value_type> *node;
