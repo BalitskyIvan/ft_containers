@@ -248,7 +248,6 @@ public:
 
   void swap(list &x) { swap_lists(this->node, x.node); }
 
-
   void clear() { erase(begin(), end()); }
 
   void resize(size_type n, value_type val = value_type()) {
@@ -282,7 +281,7 @@ public:
     x.erase(first, last);
   }
 
-  void remove(const value_type& val) {
+  void remove(const value_type &val) {
     iterator first = begin();
     iterator last = end();
 
@@ -295,8 +294,42 @@ public:
     }
   }
 
+  void sort() {
+    bool isSorted = false;
+
+    while (!isSorted) {
+      isSorted = true;
+      iterator current = begin();
+      iterator next = begin().i_node->next;
+
+      while (next != end()) {
+        if (current.i_node->element > next.i_node->element) {
+          isSorted = false;
+          value_type tmp = current.i_node->element;
+          current.i_node->element = next.i_node->element;
+          next.i_node->element = tmp;
+        }
+        next++;
+        current++;
+      }
+    }
+  }
+
+  template <class Compare> void sort(Compare comp) {}
+
   void reverse() {
-    
+    iterator first = begin();
+    iterator last = end();
+
+    while (first != last) {
+      last--;
+      value_type tmp = first.i_node->element;
+      first.i_node->element = last.i_node->element;
+      last.i_node->element = tmp;
+      if (last == first)
+        break;
+      first++;
+    }
   }
 
   virtual ~list() { clear(); };
