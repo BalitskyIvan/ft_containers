@@ -317,6 +317,15 @@ public:
   void unique (BinaryPredicate binary_pred)
   {
 
+    bool isSorted = false;
+
+    while (!isSorted) {
+      iterator first = begin();
+      iterator last = end();
+      while (first != last) {
+        if (binary_pred())
+      }
+    }
   }
 
   void sort() { sort(default_compare); }
