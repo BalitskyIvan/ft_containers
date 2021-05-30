@@ -51,7 +51,7 @@ public:
   list(InputIterator first, InputIterator last,
        const allocator_type &alloc = allocator_type()) {
     node = create_empty_node();
-    insert<iterator>(begin(), first, last);
+    insert<InputIterator>(begin(), first, last);
   }
 
   list(const list &x) {
@@ -185,9 +185,9 @@ public:
   }
 
   template <class InputIterator>
-  void insert(iterator position, iterator first, iterator last) {
+  void insert(iterator position, InputIterator first, InputIterator last) {
     for (; first != last; first++)
-      push_node(position, create_node(first.i_node->element));
+      push_node(position, create_node(*first));
   }
 
   iterator erase(iterator position) {
@@ -216,26 +216,28 @@ public:
   const_reference back() const { return *end(); }
 
   template <class InputIterator>
-  void assign(InputIterator first, InputIterator last) {
-    //			iterator first_my = begin();
-    //			iterator last_my = end();
-    //			while (first_my != last_my)
-    //				if () {
-    //				} else {
-    //					first = erase(first);
-    //				}
+  void assign(InputIterator first, InputIterator last,
+              typename std::enable_if<
+                  std::__is_input_iterator<InputIterator>::value>::type * = 0) {
+    iterator first_my = begin();
+    iterator last_my = end();
+    for (; first != last && first_my != last_my; first++, first_my++)
+      *first_my = *first;
+    if (first_my == last_my)
+      insert(first_my, first, last);
+    else
+      erase(first_my, last_my);
   }
 
   void assign(size_type n, const value_type &val) {
-    //			iterator first = begin();
-    //			iterator last = end();
-    //			int i = 0;
-    //			while (first != last)
-    //				if (i < n) {
-    //					i++;
-    //				} else {
-    //					first = erase(first);
-    //				}
+    iterator first = begin();
+    iterator last = end();
+    for (; n > 0 && first != last; n--, first++)
+      *first = val;
+    if (first == last)
+      insert(first, n, val);
+    else
+      erase(first, last);
   }
 
   void push_front(const value_type &val) { insert(begin(), val); }
@@ -294,7 +296,32 @@ public:
     }
   }
 
-  void sort() {
+  template <class Predicate> void remove_if(Predicate pred) {
+    iterator first = begin();
+    iterator last = end();
+
+    while (first != last) {
+      if (pred(first.i_node->element)) {
+        erase(first);
+      }
+      first++;
+    }
+  }
+
+  void unique()
+  {
+
+  }
+
+  template <class BinaryPredicate>
+  void unique (BinaryPredicate binary_pred)
+  {
+
+  }
+
+  void sort() { sort(default_compare); }
+
+  template <class Compare> void sort(Compare &comp) {
     bool isSorted = false;
 
     while (!isSorted) {
@@ -303,19 +330,23 @@ public:
       iterator next = begin().i_node->next;
 
       while (next != end()) {
-        if (current.i_node->element > next.i_node->element) {
+        if (!comp(current.i_node->element, next.i_node->element)) {
           isSorted = false;
-          value_type tmp = current.i_node->element;
-          current.i_node->element = next.i_node->element;
-          next.i_node->element = tmp;
+          Node<value_type> *next_node = current.i_node->next;
+          Node<value_type> *prev_node = current.i_node->prev;
+
+          current.i_node->next = next_node->next;
+          current.i_node->prev = next_node;
+          next_node->next->prev = current.i_node;
+          next_node->next = current.i_node;
+          next_node->prev = prev_node;
+          prev_node->next = next_node;
         }
         next++;
         current++;
       }
     }
   }
-
-  template <class Compare> void sort(Compare comp) {}
 
   void reverse() {
     iterator first = begin();
@@ -367,6 +398,14 @@ private:
       x->next->prev = x->prev->next = x;
       y->next = y->prev = y;
     }
+  }
+
+  static bool default_compare(const value_type val1, const value_type val2) {
+    return (val1 < val2);
+  }
+
+  bool default_predicate(const value_type val1, const value_type val2) {
+    return (val1 == val2);
   }
 
   Node<value_type> *allocate_single_node() {
