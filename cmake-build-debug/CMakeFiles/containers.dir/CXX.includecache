@@ -10,17 +10,17 @@
 ostream
 -
 
-/Users/lmallado/Desktop/ft_containers/List/List.hpp
-cstddef
--
-iostream
--
-
 /Users/lmallado/Desktop/ft_containers/main.cpp
 Entity/Entity.hpp
 /Users/lmallado/Desktop/ft_containers/Entity/Entity.hpp
 List/List.hpp
 /Users/lmallado/Desktop/ft_containers/List/List.hpp
+list
+-
+iostream
+-
+cmath
+-
 list
 -
 
