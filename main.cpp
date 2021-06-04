@@ -1,5 +1,6 @@
 #include "Entity/Entity.hpp"
 #include "containers/List.hpp"
+#include "containers/Vector.hpp"
 #include <list>
 #include <iostream>
 #include <cmath>
@@ -7,23 +8,39 @@
 
 int main() {
   {
-    // constructors used in the same order as described above:
-    std::vector<int> first;                                // empty vector of ints
-    std::vector<int> second (4,100);                       // four ints with value 100
-    std::vector<int> third (second.begin(),second.end());  // iterating through second
-    std::vector<int> fourth (third);                       // a copy of third
+    std::vector<int> myvector;
+    int myint;
 
-    // the iterator constructor can also be used to construct from arrays:
-    int myints[] = {16,2,77,29};
-    std::vector<int> fifth (myints, myints + sizeof(myints) / sizeof(int) );
+    for (int i = 0; i < 11; i++)
+      myvector.push_back(i);
 
-    std::cout << "The contents of fifth are:";
-    for (std::vector<int>::iterator it = fifth.begin(); it != fifth.end(); ++it)
-      std::cout << ' ' << *it;
-    std::cout << '\n';
+    std::vector<int>::iterator first = myvector.begin();
+    while (first != myvector.end()) {
+      std::cout << *first;
+      first++;
+    }
+    std::cout << std::endl;
+    std::cout << "myvector stores " << int(myvector.size()) << " numbers.\n"
+              << std::endl;
   }
   {
+    ft::vector<int> myvector;
+    int  myint = 3;
 
+    for (int i = 0; i < myint; i++)
+      myvector.push_back (i);
+    ft::vector<int>::iterator first = myvector.begin();
+    ft::vector<int>::iterator last = myvector.end();
+
+    std::cout << "first is " << *first << " last is " << *(--last) <<
+        " size is " << std::endl;
+    while (first != last) {
+      std::cout << *first;
+      first++;
+    }
+    std::cout << std::endl;
+    std::cout << "myvector stores " << int(myvector.size()) << " numbers.\n"
+              << std::endl;
   }
 }
 

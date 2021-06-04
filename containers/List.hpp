@@ -204,7 +204,7 @@ public:
 
   iterator insert(iterator position, const value_type &val) {
     push_node(position, create_node(val));
-    return position;
+    return --position;
   }
 
   void insert(iterator position, size_type n, const value_type &val) {
@@ -240,7 +240,7 @@ public:
 
   const_reference front() const { return *begin(); }
 
-  reference back() { return *end(); }
+  reference back() { return (*(--end())); }
 
   const_reference back() const { return *end(); }
 
@@ -277,7 +277,11 @@ public:
 
   void pop_back() { erase(--end()); }
 
-  void swap(list &x) { swap_lists(this->node, x.node); }
+  void swap(list &x) { swap_lists(this->node, x.node);
+    size_type tmp = x.size_n;
+    x.size_n = size_n;
+    size_n = tmp;
+  }
 
   void clear() { erase(begin(), end()); }
 
@@ -313,27 +317,40 @@ public:
   }
 
   void remove(const value_type &val) {
-    iterator first = begin();
-    iterator last = end();
+    bool is_removed = false;
 
-    while (first != last) {
-      if (first.i_node->element == val) {
-        erase(first);
-        break;
+    while (!is_removed) {
+      is_removed = true;
+      iterator first = begin();
+      iterator last = end();
+
+      while (first != last) {
+        if (first.i_node->element == val) {
+          erase(first);
+          is_removed = false;
+          break;
+        }
+        first++;
       }
-      first++;
     }
   }
 
   template <class Predicate> void remove_if(Predicate pred) {
-    iterator first = begin();
-    iterator last = end();
+    bool is_removed = false;
 
-    while (first != last) {
-      if (pred(first.i_node->element)) {
-        erase(first);
+    while (!is_removed) {
+      is_removed = true;
+      iterator first = begin();
+      iterator last = end();
+
+      while (first != last) {
+        if (pred(first.i_node->element)) {
+          erase(first);
+          is_removed = false;
+          break;
+        }
+        first++;
       }
-      first++;
     }
   }
 
@@ -347,7 +364,7 @@ public:
       iterator first = begin();
       iterator first_next = ++begin();
       iterator last = end();
-      while (first != last) {
+      while (first_next != last) {
         if (binary_pred(*first, *first_next)) {
           isUniq = false;
           erase(first_next);
