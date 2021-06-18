@@ -6,30 +6,34 @@
 
 #IncludeRegexTransform: 
 
+/Users/lmallado/Desktop/ft_containers/Entity/Entity.cpp
+iostream
+-
+Entity.hpp
+/Users/lmallado/Desktop/ft_containers/Entity/Entity.hpp
+
 /Users/lmallado/Desktop/ft_containers/Entity/Entity.hpp
 ostream
 -
 
-/Users/lmallado/Desktop/ft_containers/containers/List.hpp
-cstddef
--
+/Users/lmallado/Desktop/ft_containers/containers/Map.hpp
 iostream
 -
 
 /Users/lmallado/Desktop/ft_containers/containers/Vector.hpp
+iostream
+-
 
 /Users/lmallado/Desktop/ft_containers/main.cpp
 Entity/Entity.hpp
 /Users/lmallado/Desktop/ft_containers/Entity/Entity.hpp
-containers/List.hpp
-/Users/lmallado/Desktop/ft_containers/containers/List.hpp
 containers/Vector.hpp
 /Users/lmallado/Desktop/ft_containers/containers/Vector.hpp
+containers/Map.hpp
+/Users/lmallado/Desktop/ft_containers/containers/Map.hpp
 list
 -
 iostream
--
-cmath
 -
 vector
 -

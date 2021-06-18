@@ -271,6 +271,33 @@ test.cpp.s:
 	cd /Users/lmallado/Desktop/ft_containers/cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests_stl/lib/CMakeFiles/Google_Tests_run.dir/build.make tests_stl/lib/CMakeFiles/Google_Tests_run.dir/test.cpp.s
 .PHONY : test.cpp.s
 
+vector_test.o: vector_test.cpp.o
+
+.PHONY : vector_test.o
+
+# target to build an object file
+vector_test.cpp.o:
+	cd /Users/lmallado/Desktop/ft_containers/cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests_stl/lib/CMakeFiles/Google_Tests_run.dir/build.make tests_stl/lib/CMakeFiles/Google_Tests_run.dir/vector_test.cpp.o
+.PHONY : vector_test.cpp.o
+
+vector_test.i: vector_test.cpp.i
+
+.PHONY : vector_test.i
+
+# target to preprocess a source file
+vector_test.cpp.i:
+	cd /Users/lmallado/Desktop/ft_containers/cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests_stl/lib/CMakeFiles/Google_Tests_run.dir/build.make tests_stl/lib/CMakeFiles/Google_Tests_run.dir/vector_test.cpp.i
+.PHONY : vector_test.cpp.i
+
+vector_test.s: vector_test.cpp.s
+
+.PHONY : vector_test.s
+
+# target to generate assembly for a file
+vector_test.cpp.s:
+	cd /Users/lmallado/Desktop/ft_containers/cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests_stl/lib/CMakeFiles/Google_Tests_run.dir/build.make tests_stl/lib/CMakeFiles/Google_Tests_run.dir/vector_test.cpp.s
+.PHONY : vector_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -293,6 +320,9 @@ help:
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"
+	@echo "... vector_test.o"
+	@echo "... vector_test.i"
+	@echo "... vector_test.s"
 .PHONY : help
 
 

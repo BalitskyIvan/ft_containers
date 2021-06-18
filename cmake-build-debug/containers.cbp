@@ -368,6 +368,18 @@
 		<Unit filename="/Users/lmallado/Desktop/ft_containers/Entity/Entity.hpp">
 			<Option target="containers"/>
 		</Unit>
+		<Unit filename="/Users/lmallado/Desktop/ft_containers/containers/Map.hpp">
+			<Option target="containers"/>
+		</Unit>
+		<Unit filename="/Users/lmallado/Desktop/ft_containers/containers/Queue.hpp">
+			<Option target="containers"/>
+		</Unit>
+		<Unit filename="/Users/lmallado/Desktop/ft_containers/containers/Stack.hpp">
+			<Option target="containers"/>
+		</Unit>
+		<Unit filename="/Users/lmallado/Desktop/ft_containers/containers/Vector.hpp">
+			<Option target="containers"/>
+		</Unit>
 		<Unit filename="/Users/lmallado/Desktop/ft_containers/main.cpp">
 			<Option target="containers"/>
 		</Unit>
@@ -390,6 +402,9 @@
 			<Option target="Google_Tests_run"/>
 		</Unit>
 		<Unit filename="/Users/lmallado/Desktop/ft_containers/tests_stl/test.cpp">
+			<Option target="Google_Tests_run"/>
+		</Unit>
+		<Unit filename="/Users/lmallado/Desktop/ft_containers/tests_stl/vector_test.cpp">
 			<Option target="Google_Tests_run"/>
 		</Unit>
 		<Unit filename="/Users/lmallado/Desktop/ft_containers/CMakeLists.txt">
