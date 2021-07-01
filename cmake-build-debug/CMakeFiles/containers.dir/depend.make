@@ -4,8 +4,5 @@
 CMakeFiles/containers.dir/Entity/Entity.cpp.o: ../Entity/Entity.cpp
 CMakeFiles/containers.dir/Entity/Entity.cpp.o: ../Entity/Entity.hpp
 
-CMakeFiles/containers.dir/main.cpp.o: ../Entity/Entity.hpp
-CMakeFiles/containers.dir/main.cpp.o: ../containers/Map.hpp
-CMakeFiles/containers.dir/main.cpp.o: ../containers/Vector.hpp
 CMakeFiles/containers.dir/main.cpp.o: ../main.cpp
 
