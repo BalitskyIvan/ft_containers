@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+../containers/map.hpp
+iostream
+-
+
+../containers/stack.hpp
+
+../containers/vector.hpp
+iostream
+-
+
 /Users/lmallado/Desktop/ft_containers/main.cpp
 iostream
 -

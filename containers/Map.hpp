@@ -27,8 +27,8 @@ public:
   typedef Alloc allocator_type;
 
 private:
-  struct node
-  {
+  const int NODE_CREATION_SIZE = 1;
+  struct node {
     key_type key;
     size_type size;
     mapped_type value;
@@ -44,21 +44,19 @@ private:
   };
   node *root;
 
-public:
+  typedef
+      typename Alloc::template rebind<node>::other node_allocator;
 
+public:
   explicit map(const key_compare &comp = key_compare(),
                const allocator_type &alloc = allocator_type()) {}
 
   template <class InputIterator>
-  map (InputIterator first, InputIterator last,
-       const key_compare& comp = key_compare(),
-       const allocator_type& alloc = allocator_type()) {
+  map(InputIterator first, InputIterator last,
+      const key_compare &comp = key_compare(),
+      const allocator_type &alloc = allocator_type()) {}
 
-  }
-
-  map (const map& x) {
-
-  }
+  map(const map &x) {}
 
   class iterator : public std::iterator<std::bidirectional_iterator_tag, T> {
   public:
@@ -75,60 +73,42 @@ public:
     T *getObj() { return i_node->element; }
     T &operator*() const { return (i_node->element); }
 
-    iterator operator++() {
+    iterator operator++() {}
 
-    }
+    iterator operator--() {}
 
-    iterator operator--() {
+    iterator operator++(int) {}
 
-    }
-
-    iterator operator++(int) {
-
-    }
-
-    iterator operator--(int) {
-
-
-    }
+    iterator operator--(int) {}
 
     bool operator==(const iterator &i) const { return i_node == i.i_node; }
 
     bool operator!=(const iterator &i) const { return i_node != i.i_node; }
   };
 
-  class const_iterator : public
-                         std::iterator<std::bidirectional_iterator_tag, T> {
+  class const_iterator
+      : public std::iterator<std::bidirectional_iterator_tag, T> {
   public:
     key_type first;
     mapped_type second;
     node *i_node;
 
-    iterator(){};
+    const_iterator(){};
 
-    iterator() : i_node() {}
+    const_iterator(node *n) : i_node(n) {}
 
     ~iterator(){};
 
-    T *getObj() { return ; }
-    T &operator*() const { return (); }
+    T *getObj() { return; }
+    T &operator*() const { return (i_node->value); }
 
-    iterator operator++() {
+    iterator operator++() {}
 
-    }
+    iterator operator--() {}
 
-    iterator operator--() {
+    iterator operator++(int) {}
 
-    }
-
-    iterator operator++(int) {
-
-    }
-
-    iterator operator--(int) {
-
-
-    }
+    iterator operator--(int) {}
 
     bool operator==(const iterator &i) const { return i_node == i.i_node; }
 
@@ -142,91 +122,50 @@ public:
       return false;
   }
 
-  size_type size() const {
-    return root->size;
-  }
+  size_type size() const { return root->size; }
 
-  size_type max_size() const {
-    return size_type(-1);
-  }
+  size_type max_size() const { return size_type(-1); }
 
-  std::pair<iterator,bool> insert (const value_type& val) {
+  std::pair<iterator, bool> insert(const value_type &val) {}
 
-  }
-
-  iterator insert (iterator position, const value_type& val) {
-
-  }
+  iterator insert(iterator position, const value_type &val) {}
 
   template <class InputIterator>
-  void insert (InputIterator first, InputIterator last) {
+  void insert(InputIterator first, InputIterator last) {}
 
-  }
+  void erase(iterator position) {}
 
-  void erase (iterator position) {
+  size_type erase(const key_type &k) {}
 
-  }
+  void erase(iterator first, iterator last) {}
 
-  size_type erase (const key_type& k) {
+  void swap(map &x) {}
 
-  }
+  void clear() {}
 
-  void erase (iterator first, iterator last) {
+  key_compare key_comp() const {}
 
-  }
+  iterator find(const key_type &k) {}
 
-  void swap (map& x) {
+  const_iterator find(const key_type &k) const {}
 
-  }
+  size_type count(const key_type &k) const {}
 
-  void clear() {
+  iterator lower_bound(const key_type &k) {}
 
-  }
+  const_iterator lower_bound(const key_type &k) const {}
 
-  key_compare key_comp() const {
+  iterator upper_bound(const key_type &k) {}
 
-  }
+  const_iterator upper_bound(const key_type &k) const {}
 
-  iterator find (const key_type& k) {
+  std::pair<const_iterator, const_iterator>
+  equal_range(const key_type &k) const {}
 
-  }
-
-  const_iterator find (const key_type& k) const {
-
-  }
-
-  size_type count (const key_type& k) const {
-
-  }
-
-  iterator lower_bound (const key_type& k) {
-
-  }
-
-  const_iterator lower_bound (const key_type& k) const {
-
-  }
-
-  iterator upper_bound (const key_type& k) {
-
-  }
-
-  const_iterator upper_bound (const key_type& k) const {
-
-  }
-
-  std::pair<const_iterator,const_iterator> equal_range (const key_type& k)
-      const {
-
-  }
-
-  std::pair<iterator,iterator> equal_range (const key_type& k) {
-
-  }
+  std::pair<iterator, iterator> equal_range(const key_type &k) {}
 
 private:
-
-  node* rotate_right(node *n) {
+  node *rotate_right(node *n) {
     if (n == nullptr)
       return (nullptr);
     node *to_right = n->left;
@@ -237,7 +176,7 @@ private:
     return (to_right);
   }
 
-  node* rotate_left(node *n) {
+  node *rotate_left(node *n) {
     if (n == nullptr)
       return (nullptr);
     node *to_left = n->right_node;
@@ -295,8 +234,7 @@ private:
       node *tmp = join(n->left_node, n->right_node);
       delete n;
       return tmp;
-    }
-    else if (key_compare(key, n->key))
+    } else if (key_compare(key, n->key))
       n->left_node = remove(n->left_node, key);
     else
       n->right_node - remove(n->right_node, key);
@@ -304,7 +242,7 @@ private:
   }
 
   node *create_node(key_type key, mapped_type) {
-
+    node *n = node_allocator.allocate(NODE_CREATION_SIZE);
   }
 
   size_type get_size(node *n) {

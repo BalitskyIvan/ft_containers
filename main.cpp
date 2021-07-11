@@ -2,10 +2,9 @@
 #include <string>
 #include <deque>
 #if 1 //CREATE A REAL STL EXAMPLE
-#include <map>
+//#include <map>
 #include <stack>
 #include <vector>
-namespace ft = std;
 #else
 #include <map.hpp>
 	#include <stack.hpp>
@@ -16,6 +15,8 @@ namespace ft = std;
 
 #define MAX_RAM 4294967296
 #define BUFFER_SIZE 4096
+
+#include "containers/Map.hpp"
 struct Buffer
 {
   int idx;
@@ -54,7 +55,7 @@ int main(int argc, char** argv) {
 //  }
 //  const int seed = atoi(argv[1]);
 //  srand(seed);
-
+  ft::map<int, std::string> map;
   ft::vector<std::string> vector_str;
   ft::vector<int> vector_int;
   ft::vector<Buffer> vector_buffer;
