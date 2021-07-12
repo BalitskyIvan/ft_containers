@@ -6,13 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../containers/map.hpp
-iostream
--
-
-../containers/stack.hpp
-
-../containers/vector.hpp
+/Users/lmallado/Desktop/ft_containers/containers/Map.hpp
 iostream
 -
 
@@ -23,18 +17,14 @@ string
 -
 deque
 -
-map
--
 stack
 -
 vector
 -
-map.hpp
--
-stack.hpp
--
-vector.hpp
+map
 -
 stdlib.h
 -
+containers/Map.hpp
+/Users/lmallado/Desktop/ft_containers/containers/Map.hpp
 

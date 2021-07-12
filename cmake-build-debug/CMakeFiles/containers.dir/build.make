@@ -102,19 +102,64 @@ CMakeFiles/containers.dir/Entity/Entity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/containers.dir/Entity/Entity.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lmallado/Desktop/ft_containers/Entity/Entity.cpp -o CMakeFiles/containers.dir/Entity/Entity.cpp.s
 
+CMakeFiles/containers.dir/testers/vector_test.cpp.o: CMakeFiles/containers.dir/flags.make
+CMakeFiles/containers.dir/testers/vector_test.cpp.o: ../testers/vector_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/containers.dir/testers/vector_test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/containers.dir/testers/vector_test.cpp.o -c /Users/lmallado/Desktop/ft_containers/testers/vector_test.cpp
+
+CMakeFiles/containers.dir/testers/vector_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/containers.dir/testers/vector_test.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lmallado/Desktop/ft_containers/testers/vector_test.cpp > CMakeFiles/containers.dir/testers/vector_test.cpp.i
+
+CMakeFiles/containers.dir/testers/vector_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/containers.dir/testers/vector_test.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lmallado/Desktop/ft_containers/testers/vector_test.cpp -o CMakeFiles/containers.dir/testers/vector_test.cpp.s
+
+CMakeFiles/containers.dir/testers/map_test.cpp.o: CMakeFiles/containers.dir/flags.make
+CMakeFiles/containers.dir/testers/map_test.cpp.o: ../testers/map_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/containers.dir/testers/map_test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/containers.dir/testers/map_test.cpp.o -c /Users/lmallado/Desktop/ft_containers/testers/map_test.cpp
+
+CMakeFiles/containers.dir/testers/map_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/containers.dir/testers/map_test.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lmallado/Desktop/ft_containers/testers/map_test.cpp > CMakeFiles/containers.dir/testers/map_test.cpp.i
+
+CMakeFiles/containers.dir/testers/map_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/containers.dir/testers/map_test.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lmallado/Desktop/ft_containers/testers/map_test.cpp -o CMakeFiles/containers.dir/testers/map_test.cpp.s
+
+CMakeFiles/containers.dir/testers/stack_tester.cpp.o: CMakeFiles/containers.dir/flags.make
+CMakeFiles/containers.dir/testers/stack_tester.cpp.o: ../testers/stack_tester.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/containers.dir/testers/stack_tester.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/containers.dir/testers/stack_tester.cpp.o -c /Users/lmallado/Desktop/ft_containers/testers/stack_tester.cpp
+
+CMakeFiles/containers.dir/testers/stack_tester.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/containers.dir/testers/stack_tester.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lmallado/Desktop/ft_containers/testers/stack_tester.cpp > CMakeFiles/containers.dir/testers/stack_tester.cpp.i
+
+CMakeFiles/containers.dir/testers/stack_tester.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/containers.dir/testers/stack_tester.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lmallado/Desktop/ft_containers/testers/stack_tester.cpp -o CMakeFiles/containers.dir/testers/stack_tester.cpp.s
+
 # Object files for target containers
 containers_OBJECTS = \
 "CMakeFiles/containers.dir/main.cpp.o" \
-"CMakeFiles/containers.dir/Entity/Entity.cpp.o"
+"CMakeFiles/containers.dir/Entity/Entity.cpp.o" \
+"CMakeFiles/containers.dir/testers/vector_test.cpp.o" \
+"CMakeFiles/containers.dir/testers/map_test.cpp.o" \
+"CMakeFiles/containers.dir/testers/stack_tester.cpp.o"
 
 # External object files for target containers
 containers_EXTERNAL_OBJECTS =
 
 containers: CMakeFiles/containers.dir/main.cpp.o
 containers: CMakeFiles/containers.dir/Entity/Entity.cpp.o
+containers: CMakeFiles/containers.dir/testers/vector_test.cpp.o
+containers: CMakeFiles/containers.dir/testers/map_test.cpp.o
+containers: CMakeFiles/containers.dir/testers/stack_tester.cpp.o
 containers: CMakeFiles/containers.dir/build.make
 containers: CMakeFiles/containers.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable containers"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable containers"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/containers.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

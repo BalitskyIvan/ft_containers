@@ -44,8 +44,7 @@ private:
   };
   node *root;
 
-  typedef
-      typename Alloc::template rebind<node>::other node_allocator;
+  typedef typename Alloc::template rebind<node>::other node_allocator;
 
 public:
   explicit map(const key_compare &comp = key_compare(),
@@ -59,6 +58,47 @@ public:
   map(const map &x) {}
 
   class iterator : public std::iterator<std::bidirectional_iterator_tag, T> {
+  private:
+    iterator find_next_element(node cur_node, node cur_max_node) {
+      if (cur_node->left_node != nullptr) {
+        cur_node = cur_node->left_node;
+        if (cur_max_node == nullptr && cur_node.key > i_node->key)
+          cur_max_node = cur_node;
+        else if (cur_node.key > i_node->key && cur_node.key < cur_max_node.key)
+          cur_max_node = cur_node;
+        return find_next_element(cur_max_node);
+      }
+      if (cur_node->right_node != nullptr) {
+        cur_node = cur_node->right_node;
+        if (cur_max_node == nullptr && cur_node.key > i_node->key)
+          cur_max_node = cur_node;
+        else if (cur_node.key > i_node->key && cur_node.key < cur_max_node.key)
+          cur_max_node = cur_node;
+        return find_next_element(cur_max_node);
+      }
+      return cur_max_node;
+    }
+
+    iterator find_prev_element(node cur_node, node cur_min_node) {
+      if (cur_node->left_node != nullptr) {
+        cur_node = cur_node->left_node;
+        if (cur_min_node == nullptr && cur_node.key < i_node->key)
+          cur_min_node = cur_node;
+        else if (cur_node.key < i_node->key && cur_node.key > cur_min_node.key)
+          cur_min_node = cur_node;
+        return find_prev_element(cur_min_node);
+      }
+      if (cur_node->right_node != nullptr) {
+        cur_node = cur_node->right_node;
+        if (cur_min_node == nullptr && cur_node.key < i_node->key)
+          cur_min_node = cur_node;
+        else if (cur_node.key < i_node->key && cur_node.key > cur_min_node.key)
+          cur_min_node = cur_node;
+        return find_prev_element(cur_min_node);
+      }
+      return cur_min_node;
+    }
+
   public:
     key_type first;
     mapped_type second;
@@ -71,15 +111,30 @@ public:
     ~iterator(){};
 
     T *getObj() { return i_node->element; }
+
     T &operator*() const { return (i_node->element); }
 
-    iterator operator++() {}
+    iterator operator++() {
+      i_node = find_next_element(i_node, nullptr);
+      return *this;
+    }
 
-    iterator operator--() {}
+    iterator operator--() {
+      i_node = find_prev_element(i_node, nullptr);
+      return *this;
+    }
 
-    iterator operator++(int) {}
+    iterator operator++(int) {
+      iterator iter(*this);
+      i_node = find_next_element(i_node, nullptr);
+      return iter;
+    }
 
-    iterator operator--(int) {}
+    iterator operator--(int) {
+      iterator iter(*this);
+      i_node = find_prev_element(i_node, nullptr);
+      return iter;
+    }
 
     bool operator==(const iterator &i) const { return i_node == i.i_node; }
 
@@ -243,6 +298,7 @@ private:
 
   node *create_node(key_type key, mapped_type) {
     node *n = node_allocator.allocate(NODE_CREATION_SIZE);
+    return n;
   }
 
   size_type get_size(node *n) {

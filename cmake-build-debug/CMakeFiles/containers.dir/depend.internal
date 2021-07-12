@@ -5,7 +5,5 @@ CMakeFiles/containers.dir/Entity/Entity.cpp.o
  /Users/lmallado/Desktop/ft_containers/Entity/Entity.cpp
  /Users/lmallado/Desktop/ft_containers/Entity/Entity.hpp
 CMakeFiles/containers.dir/main.cpp.o
- ../containers/map.hpp
- ../containers/stack.hpp
- ../containers/vector.hpp
+ /Users/lmallado/Desktop/ft_containers/containers/Map.hpp
  /Users/lmallado/Desktop/ft_containers/main.cpp

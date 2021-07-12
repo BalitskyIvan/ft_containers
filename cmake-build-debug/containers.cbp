@@ -382,6 +382,15 @@
 		<Unit filename="/Users/lmallado/Desktop/ft_containers/main.cpp">
 			<Option target="containers"/>
 		</Unit>
+		<Unit filename="/Users/lmallado/Desktop/ft_containers/testers/map_test.cpp">
+			<Option target="containers"/>
+		</Unit>
+		<Unit filename="/Users/lmallado/Desktop/ft_containers/testers/stack_tester.cpp">
+			<Option target="containers"/>
+		</Unit>
+		<Unit filename="/Users/lmallado/Desktop/ft_containers/testers/vector_test.cpp">
+			<Option target="containers"/>
+		</Unit>
 		<Unit filename="/Users/lmallado/Desktop/ft_containers/tests_stl/general_stuff.cpp">
 			<Option target="Google_Tests_run"/>
 		</Unit>

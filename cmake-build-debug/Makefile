@@ -307,6 +307,87 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/containers.dir/build.make CMakeFiles/containers.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+testers/map_test.o: testers/map_test.cpp.o
+
+.PHONY : testers/map_test.o
+
+# target to build an object file
+testers/map_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/containers.dir/build.make CMakeFiles/containers.dir/testers/map_test.cpp.o
+.PHONY : testers/map_test.cpp.o
+
+testers/map_test.i: testers/map_test.cpp.i
+
+.PHONY : testers/map_test.i
+
+# target to preprocess a source file
+testers/map_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/containers.dir/build.make CMakeFiles/containers.dir/testers/map_test.cpp.i
+.PHONY : testers/map_test.cpp.i
+
+testers/map_test.s: testers/map_test.cpp.s
+
+.PHONY : testers/map_test.s
+
+# target to generate assembly for a file
+testers/map_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/containers.dir/build.make CMakeFiles/containers.dir/testers/map_test.cpp.s
+.PHONY : testers/map_test.cpp.s
+
+testers/stack_tester.o: testers/stack_tester.cpp.o
+
+.PHONY : testers/stack_tester.o
+
+# target to build an object file
+testers/stack_tester.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/containers.dir/build.make CMakeFiles/containers.dir/testers/stack_tester.cpp.o
+.PHONY : testers/stack_tester.cpp.o
+
+testers/stack_tester.i: testers/stack_tester.cpp.i
+
+.PHONY : testers/stack_tester.i
+
+# target to preprocess a source file
+testers/stack_tester.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/containers.dir/build.make CMakeFiles/containers.dir/testers/stack_tester.cpp.i
+.PHONY : testers/stack_tester.cpp.i
+
+testers/stack_tester.s: testers/stack_tester.cpp.s
+
+.PHONY : testers/stack_tester.s
+
+# target to generate assembly for a file
+testers/stack_tester.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/containers.dir/build.make CMakeFiles/containers.dir/testers/stack_tester.cpp.s
+.PHONY : testers/stack_tester.cpp.s
+
+testers/vector_test.o: testers/vector_test.cpp.o
+
+.PHONY : testers/vector_test.o
+
+# target to build an object file
+testers/vector_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/containers.dir/build.make CMakeFiles/containers.dir/testers/vector_test.cpp.o
+.PHONY : testers/vector_test.cpp.o
+
+testers/vector_test.i: testers/vector_test.cpp.i
+
+.PHONY : testers/vector_test.i
+
+# target to preprocess a source file
+testers/vector_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/containers.dir/build.make CMakeFiles/containers.dir/testers/vector_test.cpp.i
+.PHONY : testers/vector_test.cpp.i
+
+testers/vector_test.s: testers/vector_test.cpp.s
+
+.PHONY : testers/vector_test.s
+
+# target to generate assembly for a file
+testers/vector_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/containers.dir/build.make CMakeFiles/containers.dir/testers/vector_test.cpp.s
+.PHONY : testers/vector_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -331,6 +412,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... testers/map_test.o"
+	@echo "... testers/map_test.i"
+	@echo "... testers/map_test.s"
+	@echo "... testers/stack_tester.o"
+	@echo "... testers/stack_tester.i"
+	@echo "... testers/stack_tester.s"
+	@echo "... testers/vector_test.o"
+	@echo "... testers/vector_test.i"
+	@echo "... testers/vector_test.s"
 .PHONY : help
 
 
