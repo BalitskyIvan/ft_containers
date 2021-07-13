@@ -95,7 +95,8 @@ int main(int argc, char** argv) {
 //    first++;
 //  }
 
-  ft::vector<int> vector;
+  ft::vector<int> a1;
+
 
 
 

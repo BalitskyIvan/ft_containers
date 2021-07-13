@@ -27,7 +27,7 @@ public:
   typedef Alloc allocator_type;
 
 private:
-  const int NODE_CREATION_SIZE = 1;
+  //const int NODE_CREATION_SIZE = 1;
   struct node {
     key_type key;
     size_type size;
@@ -297,8 +297,8 @@ private:
   }
 
   node *create_node(key_type key, mapped_type) {
-    node *n = node_allocator.allocate(NODE_CREATION_SIZE);
-    return n;
+   // node *n = node_allocator.allocate(NODE_CREATION_SIZE);
+    return nullptr;
   }
 
   size_type get_size(node *n) {
