@@ -40,12 +40,14 @@ void test_m_constructor() {
 
         m_my.insert(std::pair<int, std::string>(1, "ff"));
         m_std.insert(std::pair<int, std::string>(1, "ff"));
-        m_my.insert(std::pair<int, std::string>(9, "ff"));
-        m_std.insert(std::pair<int, std::string>(9, "ff"));
-        m_my.insert(std::pair<int, std::string>(3, "ff"));
-        m_std.insert(std::pair<int, std::string>(3, "ff"));
-        m_my.insert(std::pair<int, std::string>(5, "ff"));
-        m_std.insert(std::pair<int, std::string>(5, "ff"));
+
+        ft::map<int, std::string>::iterator m_begin = m_my.begin();
+        std::map<int, std::string>::iterator std_begin = m_std.begin();
+
+        for (; m_begin != m_my.end(); m_begin++)
+            std::cout << m_begin.second << std::endl;
+        for (; std_begin != m_std.end(); std_begin++)
+            std::cout << std_begin->second << std::endl;
     }
 
     my_output.close();
