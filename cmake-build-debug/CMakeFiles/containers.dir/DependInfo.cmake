@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/macbook/Desktop/ft_containers/Entity/Entity.cpp" "/Users/macbook/Desktop/ft_containers/cmake-build-debug/CMakeFiles/containers.dir/Entity/Entity.cpp.o"
-  "/Users/macbook/Desktop/ft_containers/main.cpp" "/Users/macbook/Desktop/ft_containers/cmake-build-debug/CMakeFiles/containers.dir/main.cpp.o"
+  "/home/lmallado/Desktop/ft_containers/Entity/Entity.cpp" "/home/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles/containers.dir/Entity/Entity.cpp.o"
+  "/home/lmallado/Desktop/ft_containers/main.cpp" "/home/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles/containers.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

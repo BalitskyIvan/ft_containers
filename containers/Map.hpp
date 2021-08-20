@@ -20,10 +20,10 @@ namespace ft {
         typedef T mapped_type;
         typedef std::pair<const key_type, mapped_type> value_type;
         typedef Compare key_compare;
-        typedef value_type &								reference;
-        typedef const value_type &							const_reference;
-        typedef value_type *								pointer;
-        typedef const value_type *							const_pointer;
+        typedef value_type &reference;
+        typedef const value_type &const_reference;
+        typedef value_type *pointer;
+        typedef const value_type *const_pointer;
         typedef size_t size_type;
         typedef ptrdiff_t difference_type;
         typedef Alloc allocator_type;
@@ -43,6 +43,7 @@ namespace ft {
             bool operator()(const value_type &v1, const value_type &v2) const { return comp(v1.first, v2.first); };
         public:
             key_compare compare;
+
             explicit value_compare(key_compare comp) : compare(comp) {};
         };
 
@@ -73,15 +74,17 @@ namespace ft {
                     cur_node = cur_node->left_node;
                     if (cur_max_node == NULL && cur_node->value->first > i_node->value->first)
                         cur_max_node = cur_node;
-                    else if (cur_node->value->first > i_node->value->first && cur_node->value->first < cur_max_node->value->first)
+                    else if (cur_node->value->first > i_node->value->first &&
+                             cur_node->value->first < cur_max_node->value->first)
                         cur_max_node = cur_node;
                     return find_next_element(cur_max_node, NULL);
                 }
                 if (cur_node->right_node != NULL) {
                     cur_node = cur_node->right_node;
-                    if (cur_max_node == NULL && cur_node->value->first> i_node->value->first)
+                    if (cur_max_node == NULL && cur_node->value->first > i_node->value->first)
                         cur_max_node = cur_node;
-                    else if (cur_node->value->first > i_node->value->first && cur_node->value->first < cur_max_node->value->first)
+                    else if (cur_node->value->first > i_node->value->first &&
+                             cur_node->value->first < cur_max_node->value->first)
                         cur_max_node = cur_node;
                     return find_next_element(cur_max_node, NULL);
                 }
@@ -93,7 +96,8 @@ namespace ft {
                     cur_node = cur_node->left_node;
                     if (cur_min_node == NULL && cur_node->value->first < i_node->value->first)
                         cur_min_node = cur_node;
-                    else if (cur_node->value->first < i_node->value->first && cur_node->value->first > cur_min_node->value->first)
+                    else if (cur_node->value->first < i_node->value->first &&
+                             cur_node->value->first > cur_min_node->value->first)
                         cur_min_node = cur_node;
                     return find_prev_element(cur_min_node);
                 }
@@ -101,7 +105,8 @@ namespace ft {
                     cur_node = cur_node->right_node;
                     if (cur_min_node == NULL && cur_node->value->first < i_node->value->first)
                         cur_min_node = cur_node;
-                    else if (cur_node->value->first < i_node->value->first && cur_node->value->first > cur_min_node->value->first)
+                    else if (cur_node->value->first < i_node->value->first &&
+                             cur_node->value->first > cur_min_node->value->first)
                         cur_min_node = cur_node;
                     return find_prev_element(cur_min_node);
                 }
@@ -109,8 +114,6 @@ namespace ft {
             }
 
         public:
-            key_type first;
-            mapped_type second;
             node *i_node;
 
             iterator() {};
@@ -180,10 +183,14 @@ namespace ft {
             bool operator!=(const iterator &i) const { return i_node != i.i_node; }
         };
 
-        iterator		begin() { if (tree_size == 0) return get_end_node(); else return iterator(root); };
-        const_iterator 	begin() const { if (tree_size == 0) return get_end_node(); else return const_iterator(root); };
-        iterator		end() { return iterator(get_end_node()); };
-        const_iterator	end() const { return const_iterator(get_end_node()); };
+        iterator begin() { if (tree_size == 0) return get_end_node(); else return iterator(root); };
+
+        const_iterator begin() const { if (tree_size == 0) return get_end_node(); else return const_iterator(root); };
+
+        iterator end() { return iterator(get_end_node()); };
+
+        const_iterator end() const { return const_iterator(get_end_node()); };
+
 //
 //        reverse_iterator 		rbegin() { return (_size != 0) ? reverse_iterator(_end_node->parent) : reverse_iterator(_begin_node); };
 //        const_reverse_iterator	rbegin() const { return (_size != 0) ? const_reverse_iterator(_end_node->parent) : const_reverse_iterator(_begin_node); };
@@ -279,8 +286,10 @@ namespace ft {
         }
 
         node *push_node(node *n, const_reference val) {
-            if (n == NULL)
-                return create_node(val);
+            if (n == NULL) {
+                root = create_node(val);
+                return root;
+            }
             if (rand() % (n->size + 1) == 0)
                 return push_to_root(n, val);
             if (comparator(n->value->first, val.first))
@@ -328,6 +337,7 @@ namespace ft {
             n->size = 0;
             n->value = alloc.allocate(1);
             alloc.construct(n->value, val);
+            tree_size++;
             return n;
         }
 
@@ -338,10 +348,11 @@ namespace ft {
         }
 
         iterator get_end_node() {
-            iterator first = begin();
+            iterator first = iterator(root);
             for (int i = 0; i < tree_size; i++, first++);
             return first;
         }
+
         void fix_size(node *n) {
             n->size = get_size(n->right_node) + get_size(n->left_node) + 1;
         }

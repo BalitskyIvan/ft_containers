@@ -8,107 +8,109 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/macbook/Desktop/ft_containers/cmake-build-debug"/>
+				<Option working_dir="/home/lmallado/Desktop/ft_containers/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/macbook/Desktop/ft_containers/cmake-build-debug"/>
+				<Option working_dir="/home/lmallado/Desktop/ft_containers/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/macbook/Desktop/ft_containers/cmake-build-debug"/>
+				<Option working_dir="/home/lmallado/Desktop/ft_containers/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="containers">
-				<Option output="/Users/macbook/Desktop/ft_containers/cmake-build-debug/containers" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/macbook/Desktop/ft_containers/cmake-build-debug"/>
+				<Option output="/home/lmallado/Desktop/ft_containers/cmake-build-debug/containers" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lmallado/Desktop/ft_containers/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/macbook/Desktop/ft_containers/containers"/>
-					<Add directory="/Users/macbook/Desktop/ft_containers/testers"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/home/lmallado/Desktop/ft_containers/containers"/>
+					<Add directory="/home/lmallado/Desktop/ft_containers/testers"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 containers"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 containers"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="containers/fast">
-				<Option output="/Users/macbook/Desktop/ft_containers/cmake-build-debug/containers" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/macbook/Desktop/ft_containers/cmake-build-debug"/>
+				<Option output="/home/lmallado/Desktop/ft_containers/cmake-build-debug/containers" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lmallado/Desktop/ft_containers/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/macbook/Desktop/ft_containers/containers"/>
-					<Add directory="/Users/macbook/Desktop/ft_containers/testers"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/home/lmallado/Desktop/ft_containers/containers"/>
+					<Add directory="/home/lmallado/Desktop/ft_containers/testers"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 containers/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/macbook/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 containers/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lmallado/Desktop/ft_containers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/macbook/Desktop/ft_containers/Entity/Entity.cpp">
+		<Unit filename="/home/lmallado/Desktop/ft_containers/Entity/Entity.cpp">
 			<Option target="containers"/>
 		</Unit>
-		<Unit filename="/Users/macbook/Desktop/ft_containers/Entity/Entity.hpp">
+		<Unit filename="/home/lmallado/Desktop/ft_containers/Entity/Entity.hpp">
 			<Option target="containers"/>
 		</Unit>
-		<Unit filename="/Users/macbook/Desktop/ft_containers/containers/Map.hpp">
+		<Unit filename="/home/lmallado/Desktop/ft_containers/containers/Map.hpp">
 			<Option target="containers"/>
 		</Unit>
-		<Unit filename="/Users/macbook/Desktop/ft_containers/containers/Stack.hpp">
+		<Unit filename="/home/lmallado/Desktop/ft_containers/containers/Stack.hpp">
 			<Option target="containers"/>
 		</Unit>
-		<Unit filename="/Users/macbook/Desktop/ft_containers/containers/Vector.hpp">
+		<Unit filename="/home/lmallado/Desktop/ft_containers/containers/Vector.hpp">
 			<Option target="containers"/>
 		</Unit>
-		<Unit filename="/Users/macbook/Desktop/ft_containers/containers/reimplemented_staff.hpp">
+		<Unit filename="/home/lmallado/Desktop/ft_containers/containers/reimplemented_staff.hpp">
 			<Option target="containers"/>
 		</Unit>
-		<Unit filename="/Users/macbook/Desktop/ft_containers/main.cpp">
+		<Unit filename="/home/lmallado/Desktop/ft_containers/main.cpp">
 			<Option target="containers"/>
 		</Unit>
-		<Unit filename="/Users/macbook/Desktop/ft_containers/testers">
+		<Unit filename="/home/lmallado/Desktop/ft_containers/testers">
 			<Option target="containers"/>
 		</Unit>
-		<Unit filename="/Users/macbook/Desktop/ft_containers/CMakeLists.txt">
+		<Unit filename="/home/lmallado/Desktop/ft_containers/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

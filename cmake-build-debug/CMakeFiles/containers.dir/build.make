@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /snap/clion/162/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /snap/clion/162/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/macbook/Desktop/ft_containers
+CMAKE_SOURCE_DIR = /home/lmallado/Desktop/ft_containers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/macbook/Desktop/ft_containers/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lmallado/Desktop/ft_containers/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/containers.dir/depend.make
@@ -68,29 +68,29 @@ include CMakeFiles/containers.dir/flags.make
 
 CMakeFiles/containers.dir/main.cpp.o: CMakeFiles/containers.dir/flags.make
 CMakeFiles/containers.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/containers.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/containers.dir/main.cpp.o -c /Users/macbook/Desktop/ft_containers/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/containers.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/containers.dir/main.cpp.o -c /home/lmallado/Desktop/ft_containers/main.cpp
 
 CMakeFiles/containers.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/containers.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/macbook/Desktop/ft_containers/main.cpp > CMakeFiles/containers.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lmallado/Desktop/ft_containers/main.cpp > CMakeFiles/containers.dir/main.cpp.i
 
 CMakeFiles/containers.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/containers.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/macbook/Desktop/ft_containers/main.cpp -o CMakeFiles/containers.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lmallado/Desktop/ft_containers/main.cpp -o CMakeFiles/containers.dir/main.cpp.s
 
 CMakeFiles/containers.dir/Entity/Entity.cpp.o: CMakeFiles/containers.dir/flags.make
 CMakeFiles/containers.dir/Entity/Entity.cpp.o: ../Entity/Entity.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/containers.dir/Entity/Entity.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/containers.dir/Entity/Entity.cpp.o -c /Users/macbook/Desktop/ft_containers/Entity/Entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/containers.dir/Entity/Entity.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/containers.dir/Entity/Entity.cpp.o -c /home/lmallado/Desktop/ft_containers/Entity/Entity.cpp
 
 CMakeFiles/containers.dir/Entity/Entity.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/containers.dir/Entity/Entity.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/macbook/Desktop/ft_containers/Entity/Entity.cpp > CMakeFiles/containers.dir/Entity/Entity.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lmallado/Desktop/ft_containers/Entity/Entity.cpp > CMakeFiles/containers.dir/Entity/Entity.cpp.i
 
 CMakeFiles/containers.dir/Entity/Entity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/containers.dir/Entity/Entity.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/macbook/Desktop/ft_containers/Entity/Entity.cpp -o CMakeFiles/containers.dir/Entity/Entity.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lmallado/Desktop/ft_containers/Entity/Entity.cpp -o CMakeFiles/containers.dir/Entity/Entity.cpp.s
 
 # Object files for target containers
 containers_OBJECTS = \
@@ -104,7 +104,7 @@ containers: CMakeFiles/containers.dir/main.cpp.o
 containers: CMakeFiles/containers.dir/Entity/Entity.cpp.o
 containers: CMakeFiles/containers.dir/build.make
 containers: CMakeFiles/containers.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/macbook/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable containers"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable containers"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/containers.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -116,6 +116,6 @@ CMakeFiles/containers.dir/clean:
 .PHONY : CMakeFiles/containers.dir/clean
 
 CMakeFiles/containers.dir/depend:
-	cd /Users/macbook/Desktop/ft_containers/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/macbook/Desktop/ft_containers /Users/macbook/Desktop/ft_containers /Users/macbook/Desktop/ft_containers/cmake-build-debug /Users/macbook/Desktop/ft_containers/cmake-build-debug /Users/macbook/Desktop/ft_containers/cmake-build-debug/CMakeFiles/containers.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lmallado/Desktop/ft_containers/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lmallado/Desktop/ft_containers /home/lmallado/Desktop/ft_containers /home/lmallado/Desktop/ft_containers/cmake-build-debug /home/lmallado/Desktop/ft_containers/cmake-build-debug /home/lmallado/Desktop/ft_containers/cmake-build-debug/CMakeFiles/containers.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/containers.dir/depend
 
