@@ -37,6 +37,8 @@ namespace ft {
             node *root;
             node *left_node;
             node *right_node;
+            node *end_node;
+            bool is_end_node;
         };
 
         class value_compare : public std::binary_function<value_type, value_type, bool> {
@@ -52,23 +54,29 @@ namespace ft {
         node *root;
         node *begin_node;
         node *end_node;
+        node *true_end_node;
         key_compare comparator;
         typedef typename allocator_type::template rebind<node>::other node_allocator_rebind;
         node_allocator_rebind node_allocator;
         allocator_type alloc;
     public:
         explicit map(const key_compare &comp = key_compare(),
-                     const allocator_type &alloc = allocator_type()) : tree_size(0), comparator(comp), root(NULL), begin_node(NULL), end_node(NULL) {
+                     const allocator_type &alloc = allocator_type()) : tree_size(0), comparator(comp), root(NULL),
+                                                                       begin_node(NULL), true_end_node(NULL),
+                                                                       end_node(create_end_node()) {
         }
 
         template<class InputIterator>
         map(InputIterator first, InputIterator last,
             const key_compare &comp = key_compare(),
-            const allocator_type &alloc = allocator_type()) : tree_size(0), comparator(comp), root(NULL), begin_node(NULL), end_node(NULL)  {
+            const allocator_type &alloc = allocator_type()) : tree_size(0), comparator(comp), root(NULL),
+                                                              begin_node(NULL), true_end_node(NULL),
+                                                              end_node(create_end_node()) {
 
         }
 
-        map(const map &x) : tree_size(x.size()), root(x.root), comparator(x.comparator), begin_node(x.begin_node), end_node(x.end_node)  {}
+        map(const map &x) : tree_size(x.size()), root(x.root), comparator(x.comparator), begin_node(x.begin_node),
+                            true_end_node(NULL), end_node(create_end_node()) {}
 
         class iterator : public std::iterator<std::bidirectional_iterator_tag, T> {
         private:
@@ -76,7 +84,8 @@ namespace ft {
             node *get_next(node *cur_node) {
                 node *next_max = find_next_element(cur_node);
                 if (next_max != NULL && next_max->value->first > i_node->value->first &&
-                    next_max->value->first < cur_node->value->first)
+                    (cur_node == i_node || next_max->value->first < cur_node->value->first ||
+                     cur_node->value->first < i_node->value->first))
                     return next_max;
                 if (cur_node->value->first > i_node->value->first)
                     return cur_node;
@@ -85,8 +94,9 @@ namespace ft {
 
             node *get_prev(node *cur_node) {
                 node *nearest_max = find_prev_element(cur_node);
-                if (nearest_max != NULL && nearest_max->value.first < i_node->value->first &&
-                    nearest_max->value->first > cur_node->value->first)
+                if (nearest_max != NULL && nearest_max->value->first < i_node->value->first &&
+                    (cur_node == i_node || nearest_max->value->first > cur_node->value->first ||
+                     cur_node->value->first > i_node->value->first))
                     return nearest_max;
                 if (cur_node->value->first < i_node->value->first)
                     return cur_node;
@@ -102,6 +112,11 @@ namespace ft {
                     max_left = get_next(cur_node->left_node);
                 if (cur_node->right_node != NULL)
                     max_right = get_next(cur_node->right_node);
+                if (cur_node != i_node && cur_node->value->first > i_node->value->first &&
+                    ((max_left != NULL && cur_node->value->first < max_left->value->first)
+                     || (max_right != NULL && cur_node->value->first < max_right->value->first) ||
+                     (max_left == NULL && max_right == NULL)))
+                    return cur_node;
                 if ((max_left == NULL && max_right != NULL) ||
                     (max_right != NULL && max_left != NULL &&
                      max_right->value->first < max_left->value->first))
@@ -122,14 +137,22 @@ namespace ft {
                     nearest_left = get_prev(cur_node->left_node);
                 if (cur_node->right_node != NULL)
                     nearest_right = get_prev(cur_node->right_node);
-                if ((nearest_left == NULL && nearest_right != NULL) ||
-                (nearest_left != NULL && nearest_right != NULL &&
-                nearest_right->value->first > nearest_left->value->first))
+
+                if ((nearest_right != NULL &&
+                     (cur_node == i_node || cur_node->value->first < nearest_right->value->first)) &&
+                    (nearest_left == NULL ||
+                     nearest_right->value->first > nearest_left->value->first))
                     return nearest_right;
-                if ((nearest_right == NULL && nearest_left != NULL) ||
-                (nearest_right != NULL && nearest_left != NULL &&
-                nearest_left->value->first > nearest_right->value->first))
+                if ((nearest_left != NULL &&
+                     (cur_node == i_node || cur_node->value->first < nearest_left->value->first)) &&
+                    (nearest_right == NULL ||
+                     nearest_left->value->first > nearest_right->value->first))
                     return nearest_left;
+                if (cur_node != i_node && cur_node->value->first < i_node->value->first &&
+                    ((nearest_left != NULL && cur_node->value->first > nearest_left->value->first)
+                     || (nearest_right != NULL && cur_node->value->first > nearest_right->value->first) ||
+                     (nearest_left == NULL && nearest_right == NULL)))
+                    return cur_node;
                 return NULL;
             }
 
@@ -141,7 +164,7 @@ namespace ft {
 
             iterator(node *node) : i_node(node) {
                 if (node != NULL)
-                    r = &node->root;
+                    r = node->root;
             }
 
             iterator(const iterator &iter) { *this = iter; };
@@ -154,23 +177,33 @@ namespace ft {
 
             iterator operator++() {
                 i_node = find_next_element(r);
+                if (i_node == NULL)
+                    i_node = r->end_node;
                 return *this;
             }
 
             iterator operator--() {
-                i_node = find_prev_element(r);
+                if (i_node->is_end_node)
+                    i_node = i_node->left_node;
+                else
+                    i_node = find_prev_element(r);
                 return *this;
             }
 
             iterator operator++(int) {
                 iterator iter(*this);
                 i_node = find_next_element(r);
+                if (i_node == NULL)
+                    i_node = r->end_node;
                 return iter;
             }
 
             iterator operator--(int) {
                 iterator iter(*this);
-                i_node = find_prev_element(r);
+                if (i_node->is_end_node)
+                    i_node = i_node->left_node;
+                else
+                    i_node = find_prev_element(r);
                 return iter;
             }
 
@@ -219,9 +252,11 @@ namespace ft {
             bool operator!=(const iterator &i) const { return i_node != i.i_node; }
         };
 
-        iterator begin() { if (tree_size == 0) return iterator(NULL); else return iterator(begin_node); };
+        iterator begin() { return iterator(begin_node); };
 
-        const_iterator begin() const { if (tree_size == 0) return const_iterator(NULL); else return const_iterator(begin_node); };
+        const_iterator begin() const {
+            return const_iterator(begin_node);
+        };
 
         iterator end() { return iterator(end_node); };
 
@@ -329,23 +364,34 @@ namespace ft {
                 node *new_n = create_node(val);
                 if (begin_node == NULL || begin_node->value->first > new_n->value->first)
                     begin_node = new_n;
-                if (end_node == NULL || end_node->value->first < new_n->value->first)
-                    end_node = new_n;
-                if (n == root)
+                if (true_end_node == NULL || true_end_node->value->first < new_n->value->first) {
+                    true_end_node = new_n;
+                    end_node->left_node = true_end_node;
+                }
+                if (n == root) {
                     root = new_n;
+                    set_new_root(root);
+                    end_node->root = root;
+                }
                 return new_n;
             }
             if (val.first < n->value->first) {
                 n->left_node = push_to_root(n->left_node, val);
                 node *new_n = rotate_right(n);
-                if (n == root)
+                if (n == root) {
                     root = new_n;
+                    set_new_root(root);
+                    end_node->root = root;
+                }
                 return new_n;
             }
             n->right_node = push_to_root(n->right_node, val);
             node *new_n = rotate_left(n);
-            if (n == root)
+            if (n == root) {
                 root = new_n;
+                set_new_root(root);
+                end_node->root = root;
+            }
             return new_n;
         }
 
@@ -396,44 +442,39 @@ namespace ft {
             node *n = node_allocator.allocate(NODE_CREATION_SIZE);
             n->left_node = NULL;
             n->right_node = NULL;
+            n->end_node = end_node;
             n->size = 0;
-            n->root = *root;
+            n->root = root;
+            n->is_end_node = false;
             n->value = alloc.allocate(1);
             alloc.construct(n->value, val);
             tree_size++;
             return n;
         }
 
+        node *create_end_node() {
+            node *n = node_allocator.allocate(NODE_CREATION_SIZE);
+            n->left_node = NULL;
+            n->right_node = NULL;
+            n->end_node = NULL;
+            n->size = 0;
+            n->root = root;
+            n->is_end_node = true;
+            return n;
+        }
+
+        void set_new_root(node *cur_node) {
+            if (cur_node->left_node != NULL)
+                set_new_root(cur_node->left_node);
+            if (cur_node->right_node != NULL)
+                set_new_root(cur_node->right_node);
+            cur_node->root = root;
+        }
+
         size_type get_size(node *n) {
             if (n == NULL)
                 return (0);
             return (n->size);
-        }
-
-        iterator get_begin_node() {
-            return iterator(search_min_node(root));
-        }
-
-        node *search_min_node(node *cur_min) {
-            node *min_left = NULL;
-            node *min_right = NULL;
-            if (cur_min->left_node != NULL)
-                min_left = search_min_node(cur_min->left_node);
-            if (cur_min->right_node != NULL)
-                min_right = search_min_node(cur_min->right_node);
-            if (min_left != NULL && min_left->value->first < cur_min->value->first &&
-            (min_right == NULL || min_left->value->first < min_right->value->first))
-                return min_left;
-            if (min_right != NULL && min_right->value->first < cur_min->value->first &&
-            (min_left == NULL || min_right->value->first < min_left->value->first))
-                return min_right;
-            return cur_min;
-        }
-
-        iterator get_end_node() {
-            iterator first = iterator(root);
-            for (int i = 0; i < tree_size; i++, first++);
-            return first;
         }
 
         void fix_size(node *n) {
