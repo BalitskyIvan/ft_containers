@@ -41,13 +41,35 @@ void test_m_constructor() {
         m_my.insert(std::pair<int, std::string>(1, "ff"));
         m_std.insert(std::pair<int, std::string>(1, "ff"));
 
+        m_my.insert(std::pair<int, std::string>(1, "gg"));
+        m_std.insert(std::pair<int, std::string>(1, "gg"));
+        m_my.insert(std::pair<int, std::string>(2, "gg"));
+        m_std.insert(std::pair<int, std::string>(2, "gg"));
+
+        m_my.insert(std::pair<int, std::string>(2, "22"));
+        m_std.insert(std::pair<int, std::string>(2, "22"));
+
+        m_my.insert(std::pair<int, std::string>(3, "33"));
+        m_std.insert(std::pair<int, std::string>(3, "33"));
+
+        m_my.insert(std::pair<int, std::string>(-3, "334"));
+        m_std.insert(std::pair<int, std::string>(-3, "334"));
+
+        for (int i = 0; i < 5; i++) {
+            m_my.insert(std::pair<int, std::string>(i, "c"));
+            m_std.insert(std::pair<int, std::string>(i, "c"));
+        }
         ft::map<int, std::string>::iterator m_begin = m_my.begin();
         std::map<int, std::string>::iterator std_begin = m_std.begin();
 
-        for (; m_begin != m_my.end(); m_begin++)
-            std::cout << m_begin.second << std::endl;
+        for (; m_begin != m_my.end(); m_begin++) {
+            my_output<< m_begin->second;
+        }
+     //   std::cout << " --------STL--------" << std::endl;
+
+
         for (; std_begin != m_std.end(); std_begin++)
-            std::cout << std_begin->second << std::endl;
+            std_output << std_begin->second;
     }
 
     my_output.close();

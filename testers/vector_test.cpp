@@ -50,8 +50,8 @@ void check_diff() {
 
         my_output.close();
         std_output.close();
-        std::remove(MY_OUTPUT);
-        std::remove(STD_OUTPUT);
+//        std::remove(MY_OUTPUT);
+//        std::remove(STD_OUTPUT);
     } else {
         std::cout << BOLDRED << "KO" << RESET << std::endl;
     }
