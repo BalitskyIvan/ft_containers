@@ -175,5 +175,6 @@ int main(int argc, char **argv) {
  * TODO Устранить лики в мапе
  * TODO Добавить comparator в мапу
  * TODO Добавить reverse и const_iterator в мапу
+ * TODO lexoraphicla iterators
  * TODO сдать.
 */
