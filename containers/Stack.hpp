@@ -43,7 +43,8 @@ public:
   void pop() {
       this->container.pop_back();
   }
-
+protected:
+  container_type c;
 private:
     container_type container;
 };

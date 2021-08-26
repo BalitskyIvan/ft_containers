@@ -39,6 +39,17 @@ namespace ft {
             node *right_node;
             node *end_node;
             bool is_end_node;
+
+            node &operator=(const node &n) {
+              this->root = n.root;
+              this->left_node = n.left_node;
+              this->right_node = n.right_node;
+              this->end_node = n.end_node;
+              this->size = n.size;
+              this->value = n.value;
+              this->is_end_node = n.is_end_node;
+              return *this;
+            };
         };
 
         class value_compare : public std::binary_function<value_type, value_type, bool> {
@@ -172,7 +183,7 @@ namespace ft {
             }
 
         public:
-            node *i_node;
+            node i_node;
 
             iterator() {};
 
@@ -530,6 +541,7 @@ namespace ft {
                     true_end_node = search_end_node(root);
                 if (is_begin_node)
                     begin_node = search_begin_node(root);
+                n = begin_node;
                 return tmp;
             } else if (key < n->value->first)
                 n->left_node = remove(n->left_node, key);
