@@ -14,6 +14,8 @@ cstddef
 cstdlib
 -
 
+../containers/Stack.hpp
+
 ../containers/Vector.hpp
 iostream
 -
@@ -25,6 +27,8 @@ reimplemented_staff.hpp
 ../containers/reimplemented_staff.hpp
 
 ../containers/reimplemented_staff.hpp
+Vector.hpp
+../containers/Vector.hpp
 
 ../testers/map_test.cpp
 fstream
@@ -35,6 +39,16 @@ map
 -
 Map.hpp
 ../testers/Map.hpp
+
+../testers/stack_tester.cpp
+fstream
+-
+iostream
+-
+stack
+-
+Stack.hpp
+../testers/Stack.hpp
 
 ../testers/vector_test.cpp
 fstream
@@ -51,4 +65,6 @@ vector_test.cpp
 /Users/macbook/Desktop/ft_containers/vector_test.cpp
 map_test.cpp
 /Users/macbook/Desktop/ft_containers/map_test.cpp
+stack_tester.cpp
+/Users/macbook/Desktop/ft_containers/stack_tester.cpp
 

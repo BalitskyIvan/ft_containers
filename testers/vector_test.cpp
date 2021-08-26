@@ -11,22 +11,9 @@
 #define STD_OUTPUT "std_output"
 
 #define RESET   "\033[0m"
-#define BLACK   "\033[30m"      /* Black */
-#define RED     "\033[31m"      /* Red */
-#define GREEN   "\033[32m"      /* Green */
-#define YELLOW  "\033[33m"      /* Yellow */
-#define BLUE    "\033[34m"      /* Blue */
 #define MAGENTA "\033[35m"      /* Magenta */
-#define CYAN    "\033[36m"      /* Cyan */
-#define WHITE   "\033[37m"      /* White */
-#define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
 #define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
 #define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
-#define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
-#define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
-#define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
-#define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
-#define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
 void check_diff() {
     std::ifstream my_output;
@@ -50,8 +37,8 @@ void check_diff() {
 
         my_output.close();
         std_output.close();
-//        std::remove(MY_OUTPUT);
-//        std::remove(STD_OUTPUT);
+        std::remove(MY_OUTPUT);
+        std::remove(STD_OUTPUT);
     } else {
         std::cout << BOLDRED << "KO" << RESET << std::endl;
     }
@@ -297,7 +284,7 @@ void test_pop_back() {
     size_t n = 5000;
     ft::vector<int> v_my(n, 999999);
     std::vector<int> v_std(n, 999999);
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n / 2; i++) {
         v_my.pop_back();
         v_std.pop_back();
         my_output << v_my.back();

@@ -16,10 +16,20 @@
   <component name="ChangeListManager">
     <list default="true" id="a7c8a6f7-2069-4936-bf56-25605f25ef3c" name="Default Changelist" comment="kkkk">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/containers.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/containers.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/containers.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/containers.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/containers.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/containers.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/containers" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/containers" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/containers/Map.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/containers/Map.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/containers/Stack.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/containers/Stack.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/containers/Vector.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/containers/Vector.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/containers/reimplemented_staff.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/containers/reimplemented_staff.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testers/map_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/testers/map_test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testers/stack_tester.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/testers/stack_tester.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testers/vector_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/testers/vector_test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_stl" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +133,11 @@
       <workItem from="1629736582901" duration="6999000" />
       <workItem from="1629784651517" duration="237000" />
       <workItem from="1629802045441" duration="10717000" />
-      <workItem from="1629852220008" duration="9044000" />
+      <workItem from="1629852220008" duration="9192000" />
+      <workItem from="1629862792555" duration="263000" />
+      <workItem from="1629910521770" duration="766000" />
+      <workItem from="1629928040754" duration="20191000" />
+      <workItem from="1629967168355" duration="3797000" />
     </task>
     <task id="LOCAL-00001" summary="kkkk">
       <created>1629850551044</created>
@@ -132,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629850551044</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="kkkk">
+      <created>1629862355601</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1629862355601</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,11 +182,6 @@
           <url>file:///usr/include/c++/9/bits/stl_vector.h</url>
           <line>1277</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/containers/Map.hpp</url>
-          <line>202</line>
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -6,8 +6,10 @@ CMakeFiles/containers.dir/Entity/Entity.cpp.o: \
  ../Entity/Entity.hpp
 CMakeFiles/containers.dir/main.cpp.o: \
  ../containers/Map.hpp \
+ ../containers/Stack.hpp \
  ../containers/Vector.hpp \
  ../containers/reimplemented_staff.hpp \
  ../testers/map_test.cpp \
+ ../testers/stack_tester.cpp \
  ../testers/vector_test.cpp \
  ../main.cpp
