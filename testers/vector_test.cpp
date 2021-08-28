@@ -228,7 +228,7 @@ void test_assign() {
         v_2_my.assign(v_my.begin(), v_my.end());
         v_2_std.assign(v_std.begin(), v_std.end());
 
-        for (int i = 0; i < n; i++) {
+        for (size_t i = 0; i < n; i++) {
             my_output << v_my[i];
             std_output << v_std[i];
         }
@@ -241,7 +241,7 @@ void test_assign() {
         v_my.assign(n * 2, 20000);
         v_std.assign(n * 2, 20000);
 
-        for (int i = 0; i < n; i++) {
+        for (size_t i = 0; i < n; i++) {
             my_output << v_my[i];
             std_output << v_std[i];
         }
@@ -258,14 +258,14 @@ void test_push_back() {
     my_output.open(MY_OUTPUT);
     std_output.open(STD_OUTPUT);
     std::cout << "Test push back" << std::endl;
-    size_t n = 5000;
-    ft::vector<int> v_my(n, 999999);
-    std::vector<int> v_std(n, 999999);
+    int n = 5000;
+    ft::vector<int> v_my(5000, 999999);
+    std::vector<int> v_std(5000, 999999);
     for (int i = 0; i < n * 2; i++) {
         v_my.push_back(i);
         v_std.push_back(i);
     }
-    for (int i = 0; i < n * 2; i++) {
+    for (size_t i = 0; i < 5000 * 2; i++) {
         my_output << v_my[i];
         std_output << v_std[i];
     }
@@ -284,7 +284,7 @@ void test_pop_back() {
     size_t n = 5000;
     ft::vector<int> v_my(n, 999999);
     std::vector<int> v_std(n, 999999);
-    for (int i = 0; i < n / 2; i++) {
+    for (int i = 0; i < 5000 / 2; i++) {
         v_my.pop_back();
         v_std.pop_back();
         my_output << v_my.back();
@@ -308,13 +308,13 @@ void test_insert() {
         size_t n = 5000;
         ft::vector<int> v_my;
         std::vector<int> v_std;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < 5000; i++) {
             v_my.insert(v_my.begin(), i);
             v_std.insert(v_std.begin(), i);
         }
         v_my.insert(v_my.begin() + 1000, 99999);
         v_std.insert(v_std.begin() + 1000, 99999);
-        for (int i = 0; i < n; i++) {
+        for (size_t i = 0; i < n; i++) {
             my_output << v_my[i];
             std_output << v_std[i];
         }
@@ -328,7 +328,7 @@ void test_insert() {
 
         v_my.insert(v_my.begin() + 1000, 99999);
         v_std.insert(v_std.begin() + 1000, 99999);
-        for (int i = 0; i < n; i++) {
+        for (size_t i = 0; i < n; i++) {
             my_output << v_my[i];
             std_output << v_std[i];
         }
@@ -350,7 +350,7 @@ void test_insert() {
         v_my.insert(v_my.begin() + 2, v_2_my.begin(), v_2_my.end());
         v_std.insert(v_std.begin() + 2, v_2_std.begin(), v_2_std.end());
 
-        for (int i = 0; i < n; i++) {
+        for (size_t i = 0; i < n; i++) {
             my_output << v_my[i];
             std_output << v_std[i];
         }

@@ -35,7 +35,7 @@ public:
                   const allocator_type &alloc = allocator_type())
       : allocator(alloc), size_a(0), capacity_a(5) {
     array = allocator.allocate(capacity_a);
-    for (int i = 0; i < n; i++)
+    for (size_t i = 0; i < n; i++)
       insert(begin(), val);
   }
 
@@ -395,7 +395,7 @@ public:
   }
 
   void insert(iterator position, size_type n, const value_type &val) {
-    for (int i = 0; i < n; i++) {
+    for (size_t i = 0; i < n; i++) {
       push_item(position, val);
     }
   }
@@ -553,11 +553,11 @@ private:
     } else {
       capacity_a *= 2;
       value_type *new_array = allocator.allocate(capacity_a + 1);
-      for (int i = 0; i < size_a; i++)
+      for (size_t i = 0; i < size_a; i++)
         new_array[i] = array[i];
       move_items_right(iterator(new_array + get_pointer_position(position)),
                        new_array);
-      int cur_pos = get_pointer_position(position);
+      size_t cur_pos = get_pointer_position(position);
       allocator.deallocate(array, size_a);
       allocator.construct(new_array + cur_pos, val);
       size_a++;
@@ -571,7 +571,7 @@ private:
   }
 
   void move_items_right(iterator position, value_type *arr) {
-    int current = 0;
+    size_t current = 0;
     iterator first = iterator(arr);
     if (position == iterator(arr + size_a))
       return;
@@ -585,17 +585,17 @@ private:
     }
   }
 
-  iterator move_items_left(int cur_pos, value_type *arr) {
-    int t = cur_pos;
+  iterator move_items_left(size_t cur_pos, value_type *arr) {
+    size_t t = cur_pos;
     for (; cur_pos < size_a - 1; cur_pos++)
       arr[cur_pos] = arr[cur_pos + 1];
     size_a--;
     return iterator(arr + t);
   }
 
-  int get_pointer_position(iterator it) {
+  size_t get_pointer_position(iterator it) {
     iterator first = begin();
-    int i = 0;
+    size_t i = 0;
     for (; first != it && first != end(); first++, i++)
       ;
     return i;

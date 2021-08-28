@@ -72,16 +72,16 @@ namespace ft {
         allocator_type alloc;
     public:
         explicit map(const key_compare &comp = key_compare(),
-                     const allocator_type &alloc = allocator_type()) : tree_size(0), comparator(comp), root(NULL),
-                                                                       begin_node(NULL), true_end_node(NULL),
-                                                                       end_node(create_end_node()) {
+                     const allocator_type &alloc = allocator_type()) : tree_size(0), root(NULL),
+                                                                       begin_node(NULL),
+                                                                       end_node(create_end_node()), true_end_node(NULL), comparator(comp), alloc(alloc) {
         }
 
         template<class InputIterator>
         map(InputIterator first, InputIterator last,
             const key_compare &comp = key_compare(),
             const allocator_type &alloc = allocator_type(),
-            typename ft::enable_if<std::__is_input_iterator<InputIterator>::value>::type * = 0) : tree_size(0),
+            typename ft::enable_if<std::__is_input_iterator<InputIterator>::value>::type * = 0) : alloc(alloc), tree_size(0),
                                                                                                   comparator(comp),
                                                                                                   root(NULL),
                                                                                                   begin_node(NULL),

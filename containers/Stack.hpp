@@ -16,7 +16,7 @@ public:
     typedef T			value_type;
   typedef size_t		size_type;
 
-  explicit stack (const container_type& ctnr = container_type()) {
+  explicit stack (const container_type& container = container_type()) {
     this->container = container;
   }
 
