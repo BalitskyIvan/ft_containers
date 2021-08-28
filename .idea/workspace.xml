@@ -16,10 +16,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a7c8a6f7-2069-4936-bf56-25605f25ef3c" name="Default Changelist" comment="kkkk">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/containers.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/containers.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/containers/Map.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/containers/Map.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/containers/Stack.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/containers/Stack.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/containers/Vector.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/containers/Vector.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testers/vector_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/testers/vector_test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +138,7 @@
       <workItem from="1630006875316" duration="216000" />
       <workItem from="1630042449737" duration="36000" />
       <workItem from="1630045753015" duration="377000" />
-      <workItem from="1630093982909" duration="8234000" />
+      <workItem from="1630093982909" duration="9111000" />
     </task>
     <task id="LOCAL-00001" summary="kkkk">
       <created>1629850551044</created>
@@ -167,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630131186095</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="kkkk">
+      <created>1630131906483</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1630131906483</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
