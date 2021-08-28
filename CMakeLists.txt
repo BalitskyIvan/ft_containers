@@ -4,6 +4,7 @@ project(containers)
 set(CMAKE_CXX_STANDARD 98)
 
 include_directories(containers testers)
+add_compile_options(-Wall -Wextra -Werror -Wconversion -Wno-unused)
 
-add_executable(containers testers main.cpp Entity/Entity.cpp Entity/Entity.hpp
+add_executable(containers main.cpp Entity/Entity.cpp Entity/Entity.hpp
         containers/Map.hpp containers/Vector.hpp containers/Stack.hpp containers/reimplemented_staff.hpp)

@@ -17,14 +17,14 @@ cstdlib
 ../containers/Stack.hpp
 
 ../containers/Vector.hpp
-iostream
--
+reimplemented_staff.hpp
+../containers/reimplemented_staff.hpp
 cstddef
+-
+iostream
 -
 limits
 -
-reimplemented_staff.hpp
-../containers/reimplemented_staff.hpp
 
 ../containers/reimplemented_staff.hpp
 Vector.hpp
@@ -67,4 +67,6 @@ map_test.cpp
 /Users/macbook/Desktop/ft_containers/map_test.cpp
 stack_tester.cpp
 /Users/macbook/Desktop/ft_containers/stack_tester.cpp
+deque
+-
 

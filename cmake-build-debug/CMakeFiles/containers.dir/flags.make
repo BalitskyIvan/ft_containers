@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/Users/macbook/Desktop/ft_containers/containers -I/Users/macbook/Desktop/ft_containers/testers
 
-CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -std=gnu++98
+CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wall -Wextra -Werror -Wconversion -Wno-unused -std=gnu++98
 

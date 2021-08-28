@@ -31,9 +31,6 @@ void test_m_constructor() {
         m_my.insert(ft::pair<int, std::string>(3, "33"));
         m_std.insert(std::pair<int, std::string>(3, "33"));
 
-        m_my.insert(ft::pair<int, std::string>(-3, "334"));
-        m_std.insert(std::pair<int, std::string>(-3, "334"));
-
         for (int i = 0; i < 5000; i++) {
             m_my.insert(ft::pair<int, std::string>(i, "c"));
             m_std.insert(std::pair<int, std::string>(i, "c"));
@@ -78,9 +75,6 @@ void test_m_constructor() {
 
         m_my.insert(ft::pair<int, std::string>(3, "33"));
         m_std.insert(std::pair<int, std::string>(3, "33"));
-
-        m_my.insert(ft::pair<int, std::string>(-3, "334"));
-        m_std.insert(std::pair<int, std::string>(-3, "334"));
 
         for (int i = 0; i < 5000; i++) {
             m_my.insert(ft::pair<int, std::string>(i, "c"));
@@ -128,9 +122,6 @@ void test_m_constructor() {
 
         m_my.insert(ft::pair<int, std::string>(3, "33"));
         m_std.insert(std::pair<int, std::string>(3, "33"));
-
-        m_my.insert(ft::pair<int, std::string>(-3, "334"));
-        m_std.insert(std::pair<int, std::string>(-3, "334"));
 
         for (int i = 0; i < 5000; i++) {
             m_my.insert(ft::pair<int, std::string>(i, "c"));

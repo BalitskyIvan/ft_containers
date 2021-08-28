@@ -43,7 +43,7 @@ public:
   vector(InputIterator first, InputIterator last,
          const allocator_type &alloc = allocator_type(),
          typename ft::enable_if<!std::numeric_limits<InputIterator>::is_integer,
-                                InputIterator>::type l = 0)
+                                InputIterator>::type = 0)
       : allocator(alloc), size_a(0), capacity_a(5) {
     array = allocator.allocate(capacity_a);
     for (; first != last; first++)
@@ -404,14 +404,14 @@ public:
   void
   insert(iterator position, InputIterator first, InputIterator last,
          typename ft::enable_if<!std::numeric_limits<InputIterator>::is_integer,
-                                InputIterator>::type l = 0) {
+                                InputIterator>::type = 0) {
     iterator it = begin();
     size_t iter_pos = 0;
     for (; it != position && it != end(); iter_pos++, it++)
       ;
     for (; first != last; first++) {
       it = begin();
-      int i = 0;
+      size_t i = 0;
       for (; i < iter_pos; i++, it++)
         ;
       value_type tmp = *first;

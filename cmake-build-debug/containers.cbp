@@ -103,9 +103,6 @@
 		<Unit filename="/Users/macbook/Desktop/ft_containers/main.cpp">
 			<Option target="containers"/>
 		</Unit>
-		<Unit filename="/Users/macbook/Desktop/ft_containers/testers">
-			<Option target="containers"/>
-		</Unit>
 		<Unit filename="/Users/macbook/Desktop/ft_containers/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

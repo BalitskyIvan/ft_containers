@@ -141,7 +141,7 @@ void test_operator() {
     size_t n = 5000;
     ft::vector<int> v_my(n, 999999);
     std::vector<int> v_std(n, 999999);
-    for (int i = 0; i < n; i++) {
+    for (size_t i = 0; i < n; i++) {
         my_output << v_my[i];
         std_output << v_std[i];
     }
@@ -160,7 +160,7 @@ void test_at() {
     size_t n = 5000;
     ft::vector<int> v_my(n, 999999);
     std::vector<int> v_std(n, 999999);
-    for (int i = 0; i < n; i++) {
+    for (size_t i = 0; i < n; i++) {
         my_output << v_my.at(i);
         std_output << v_std.at(i);
     }
@@ -179,7 +179,7 @@ void test_front() {
     size_t n = 5000;
     ft::vector<int> v_my(n, 999999);
     std::vector<int> v_std(n, 999999);
-    for (int i = 0; i < n - 1; i++) {
+    for (size_t i = 0; i < n - 1; i++) {
         my_output << v_my.front();
         std_output << v_std.front();
         v_my.erase(v_my.begin());
@@ -200,7 +200,7 @@ void test_back() {
     size_t n = 5000;
     ft::vector<int> v_my(n, 999999);
     std::vector<int> v_std(n, 999999);
-    for (int i = 0; i < n - 1; i++) {
+    for (size_t i = 0; i < n - 1; i++) {
         my_output << v_my.back();
         std_output << v_std.back();
         v_my.erase(v_my.begin());
